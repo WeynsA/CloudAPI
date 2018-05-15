@@ -1,0 +1,11 @@
+<div class="container color-dark">
+  <div class="search-area" >
+    <span>Search: </span>
+    <input type="text" [(ngModel)]="searchString">
+    <button (click)="clickSearch()">Search</button>
+  </div>
+<div class="card" *ngFor="let card of cardData">
+  <h3>{{card.name}}</h3>
+  <img [src]="card.imageUrl" alt="">
+</div>
+  </div>
