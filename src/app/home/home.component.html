@@ -1,11 +1,17 @@
 <div class="container color-dark">
   <div class="search-area" >
-    <span>Search: </span>
-    <input type="text" [(ngModel)]="searchString">
-    <button (click)="clickSearch()">Search</button>
+    <span>Search Name: </span>
+    <input type="text" placeholder="Ex: Mew" [(ngModel)]="searchString" >
+    <button (click)="clickSearch()">Search</button><br>
+    <span>Search  Type:  </span>
+    <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString">
+    <button (click)="typeSearch()">Search</button>
   </div>
-<div class="card" *ngFor="let card of cardData">
-  <h3>{{card.name}}</h3>
-  <img [src]="card.imageUrl" alt="">
+  <tr>
+<div class="card" *ngFor="let card of cardData; index as i">
+  <td><h3>{{card.name}}</h3>
+  <img [src]="card.imageUrl" alt=""></td>
+  <td>{{i}}</td>
 </div>
+</tr>
   </div>

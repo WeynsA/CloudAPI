@@ -3,13 +3,12 @@ import { HttpServiceService } from '../http-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: [`
-  p {font-weight: bold}
-  `]
+  styles: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   public cardData: any = [];
-  public searchString: string = '';
+  public searchString: string;
+  public typeString: string;
   constructor(public httpService: HttpServiceService) { }
 
   ngOnInit() {
@@ -33,6 +32,17 @@ export class HomeComponent implements OnInit {
       (err) => console.warn(err)
     )
     
+  }
+
+  typeSearch () {
+    this.httpService.searchPokemonCardByType(this.typeString)
+    .subscribe(
+      (searchData) => {
+        console.log('searchData for ' + this.typeString, searchData);
+       this.cardData = (searchData as any).cards || []; 
+      },
+      (err) => console.warn(err)
+    )
   }
 
 }
