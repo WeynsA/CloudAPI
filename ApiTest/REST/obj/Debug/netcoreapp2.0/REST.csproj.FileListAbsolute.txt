@@ -1,0 +1,11 @@
+C:\Users\Arno\Documents\ApiTest\REST\bin\Debug\netcoreapp2.0\REST.deps.json
+C:\Users\Arno\Documents\ApiTest\REST\bin\Debug\netcoreapp2.0\REST.runtimeconfig.json
+C:\Users\Arno\Documents\ApiTest\REST\bin\Debug\netcoreapp2.0\REST.runtimeconfig.dev.json
+C:\Users\Arno\Documents\ApiTest\REST\bin\Debug\netcoreapp2.0\REST.dll
+C:\Users\Arno\Documents\ApiTest\REST\bin\Debug\netcoreapp2.0\REST.pdb
+C:\Users\Arno\Documents\ApiTest\REST\obj\Debug\netcoreapp2.0\REST.csprojAssemblyReference.cache
+C:\Users\Arno\Documents\ApiTest\REST\obj\Debug\netcoreapp2.0\REST.csproj.CoreCompileInputs.cache
+C:\Users\Arno\Documents\ApiTest\REST\obj\Debug\netcoreapp2.0\REST.AssemblyInfoInputs.cache
+C:\Users\Arno\Documents\ApiTest\REST\obj\Debug\netcoreapp2.0\REST.AssemblyInfo.cs
+C:\Users\Arno\Documents\ApiTest\REST\obj\Debug\netcoreapp2.0\REST.dll
+C:\Users\Arno\Documents\ApiTest\REST\obj\Debug\netcoreapp2.0\REST.pdb
