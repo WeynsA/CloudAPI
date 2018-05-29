@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CallbackComponentComponent } from './callback-component.component';
+import { CallbackComponent } from './callback.component';
 
-describe('CallbackComponentComponent', () => {
-  let component: CallbackComponentComponent;
-  let fixture: ComponentFixture<CallbackComponentComponent>;
+describe('CallbackComponent', () => {
+  let component: CallbackComponent;
+  let fixture: ComponentFixture<CallbackComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CallbackComponentComponent ]
+      declarations: [ CallbackComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CallbackComponentComponent);
+    fixture = TestBed.createComponent(CallbackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

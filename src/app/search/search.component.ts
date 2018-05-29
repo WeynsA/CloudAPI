@@ -25,8 +25,8 @@ export class SearchComponent implements OnInit {
     )*/
   }
 
-  clickSearch(page) {
-    this.httpService.searchPokemonCardByName(this.searchString, page)
+  clickSearch() {
+    this.httpService.searchPokemonCardByName(this.searchString)
     .subscribe(
       (searchData) => {
         console.log('searchData for ' + this.searchString, searchData);
@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
     
   }
 
-  typeSearch (page) {
+  typeSearch () {
     this.httpService.searchPokemonCardByType(this.typeString)
     .subscribe(
       (searchData) => {
