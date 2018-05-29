@@ -16,13 +16,15 @@ export class HttpServiceService {
     return this.http.get(baseUrl + cardUrl + cardId);
   }
 
-  searchPokemonCardByName(name: string) {
+  searchPokemonCardByName(name: string, page) {
     let Params = new HttpParams();
 
     // Begin assigning parameters
     Params = Params.append('name',name);
     Params = Params.append('series', series);
     Params = Params.append('set', "base");
+    Params = Params.append('page', page);
+    console.log("the page var: " + page);
     var linky = this.http.get(baseUrl + cardUrl, {params: Params});
     return linky;
     //console.log("ApiLink: "+ baseUrl + cardUrl, {params: Params});

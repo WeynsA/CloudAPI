@@ -23,28 +23,4 @@ export class HomeComponent implements OnInit {
       }
     )*/
   }
-
-  clickSearch() {
-    this.httpService.searchPokemonCardByName(this.searchString)
-    .subscribe(
-      (searchData) => {
-        console.log('searchData for ' + this.searchString, searchData);
-       this.cardData = (searchData as any).cards || [];
-      },
-      (err) => console.warn(err)
-    )
-    
-  }
-
-  typeSearch () {
-    this.httpService.searchPokemonCardByType(this.typeString)
-    .subscribe(
-      (searchData) => {
-        console.log('searchData for ' + this.typeString, searchData);
-       this.cardData = (searchData as any).cards || []; 
-      },
-      (err) => console.warn(err)
-    )
-  }
-
 }

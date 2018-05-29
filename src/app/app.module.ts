@@ -11,8 +11,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpServiceService} from './http-service.service';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'search', pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

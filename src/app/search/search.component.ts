@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit {
   public cardData: any = [];
   public searchString: string;
   public typeString: string;
+  private page: number = 1;
   constructor(public httpService: HttpServiceService) { }
 
   ngOnInit() {
@@ -24,8 +25,8 @@ export class SearchComponent implements OnInit {
     )*/
   }
 
-  clickSearch() {
-    this.httpService.searchPokemonCardByName(this.searchString)
+  clickSearch(page) {
+    this.httpService.searchPokemonCardByName(this.searchString, page)
     .subscribe(
       (searchData) => {
         console.log('searchData for ' + this.searchString, searchData);
@@ -36,7 +37,7 @@ export class SearchComponent implements OnInit {
     
   }
 
-  typeSearch () {
+  typeSearch (page) {
     this.httpService.searchPokemonCardByType(this.typeString)
     .subscribe(
       (searchData) => {
@@ -45,6 +46,17 @@ export class SearchComponent implements OnInit {
       },
       (err) => console.warn(err)
     )
+  }
+
+  prevPage(){
+    if (this.page > 1)
+      this.page--;
+    console.log(this.page);
+  }
+
+  nextPage(){
+    this.page++;
+    console.log(this.page);
   }
 
 }
