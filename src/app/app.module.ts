@@ -12,6 +12,7 @@ import {HttpServiceService} from './http-service.service';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CallbackComponentComponent } from './callback-component/callback-component.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full'},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     SearchComponent,
-    NavBarComponent
+    NavBarComponent,
+    CallbackComponentComponent
   ],
   imports: [
     BrowserModule,

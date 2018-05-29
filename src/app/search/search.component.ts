@@ -59,4 +59,9 @@ export class SearchComponent implements OnInit {
     console.log(this.page);
   }
 
+  public login(): void {
+    //this.auth0.authorize();
+  }
+
+
 }

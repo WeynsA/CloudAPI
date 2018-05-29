@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 
 
@@ -8,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-
-  constructor(){
-
+  /*constructor(public auth: AuthService) {
+    auth.handleAuthentication();*/
   }
 
 
-}
+
