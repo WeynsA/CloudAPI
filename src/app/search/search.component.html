@@ -1,19 +1,16 @@
 <router-outlet></router-outlet>
 
 <div *ngIf="auth.isAuthenticated()" class="container color-dark">
-
   <div class="search-area">
-    <button (click)="prevPage()"><<</button>
+
     <span>Search Name: </span>
-    <input type="text" placeholder="Ex: Mew" [(ngModel)]="searchString" style="width: 100px">
+    <input type="text" placeholder="Ex: Mew or 'm'" [(ngModel)]="searchString" style="width: 125px">
     <button class="searchButton" (click)="clickSearch()">Search</button>
     <span>Search  Type:  </span>
-    <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 100px">
+    <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 125px">
     <button (click)="typeSearch()">Search</button>
 
-    
-    <button (click)="nextPage()">>></button>
-    
+    <ngb-pagination [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"  [(pageSize)]="pageSize" size="lg"></ngb-pagination>
   </div>
 
   

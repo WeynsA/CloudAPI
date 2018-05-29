@@ -12668,11 +12668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Arno\\CloudTest\\ApiTest\\REST\\REST.csproj",
+      "projectUniqueName": "c:\\Users\\Arno\\CloudAPI\\ApiTest\\REST\\REST.csproj",
       "projectName": "REST",
-      "projectPath": "c:\\Users\\Arno\\CloudTest\\ApiTest\\REST\\REST.csproj",
+      "projectPath": "c:\\Users\\Arno\\CloudAPI\\ApiTest\\REST\\REST.csproj",
       "packagesPath": "C:\\Users\\Arno\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Arno\\CloudTest\\ApiTest\\REST\\obj\\",
+      "outputPath": "c:\\Users\\Arno\\CloudAPI\\ApiTest\\REST\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

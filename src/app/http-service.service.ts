@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams, HttpResponse} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const baseUrl ='https://api.pokemontcg.io/v1/';
 const cardUrl = 'cards/';
@@ -16,27 +17,29 @@ export class HttpServiceService {
     return this.http.get(baseUrl + cardUrl + cardId);
   }
 
-  searchPokemonCardByName(name: string) {
+  searchPokemonCardByName(name: string,page:number) : Observable<HttpResponse<any>> {
     let Params = new HttpParams();
 
     // Begin assigning parameters
-    Params = Params.append('name',name);
+    Params = Params.append('name', name);
     Params = Params.append('series', series);
     Params = Params.append('set', "base");
-    //Params = Params.append('page', "1");
-    //console.log("the page var: " + );
-    var linky = this.http.get(baseUrl + cardUrl, {params: Params});
-    return linky;
-    //console.log("ApiLink: "+ baseUrl + cardUrl, {params: Params});
+    Params = Params.append('page', page.toString());
+    Params = Params.append('pageSize', '30')
+
+    return this.http.get(baseUrl + cardUrl, {params: Params, observe :'response'});
+
   }
 
-  searchPokemonCardByType(type: string) {
+  searchPokemonCardByType(type: string, page:number) {
     let Params = new HttpParams();
 
     // Begin assigning parameters
     Params = Params.append('types',type);
     Params = Params.append('series', series);
     Params = Params.append('set', "base");
-    return this.http.get(baseUrl + cardUrl, {params: Params});
+    Params = Params.append('page', page.toString());
+    Params = Params.append('pageSize', '30')
+    return this.http.get(baseUrl + cardUrl, {params: Params, observe : 'response'});
   }
 }
