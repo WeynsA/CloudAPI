@@ -13,14 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CallbackComponent } from './callback/callback.component';
+import { AuthService } from './auth/auth.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
- 
-];
+ ];
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
       { enableTracing: true}
     )
   ],
-  providers: [HttpServiceService],
+  providers: [HttpServiceService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

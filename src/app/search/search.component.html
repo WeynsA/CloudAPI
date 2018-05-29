@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 
-<div class="container color-dark">
+<div *ngIf="auth.isAuthenticated()" class="container color-dark">
 
   <div class="search-area">
     <button (click)="prevPage()"><<</button>
@@ -12,7 +12,7 @@
     <button (click)="typeSearch()">Search</button>
 
     
-    <button (click)="login()">>></button>
+    <button (click)="nextPage()">>></button>
     
   </div>
 
@@ -67,4 +67,8 @@
         </ng-container>
     </div>
   </table>
+</div>
+
+<div *ngIf="!auth.isAuthenticated()">
+User must be logged in to use this service.
 </div>

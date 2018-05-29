@@ -8,10 +8,9 @@ import { AuthService } from './auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  /*constructor(public auth: AuthService) {
-    auth.handleAuthentication();*/
+ constructor(public auth: AuthService) {
+    auth.handleAuthentication();
   }
-
-
-
+}

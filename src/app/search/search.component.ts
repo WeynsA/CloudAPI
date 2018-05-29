@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AuthService } from '../auth/auth.service'
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,10 @@ export class SearchComponent implements OnInit {
   public searchString: string;
   public typeString: string;
   private page: number = 1;
-  constructor(public httpService: HttpServiceService) { }
+  constructor(
+    public httpService: HttpServiceService,
+    public auth: AuthService
+  ) { }
 
   ngOnInit() {
    /* this.httpService.getPokemonCard('ex14-28')
