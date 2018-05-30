@@ -9,7 +9,7 @@ const series = 'base';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpServiceService {
+export class HttpService {
 
   constructor(private http: HttpClient) { }
 

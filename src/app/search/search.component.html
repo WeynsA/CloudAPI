@@ -1,19 +1,20 @@
-<router-outlet></router-outlet>
-
-<div *ngIf="auth.isAuthenticated()" class="container color-dark">
-  <div class="search-area">
+<div *ngIf="auth.isAuthenticated()" class="container color-dark" >
+  <div class="d-flex justify-content-center">
 
     <span>Search Name: </span>
-    <input type="text" placeholder="Ex: Mew or 'm'" [(ngModel)]="searchString" style="width: 125px">
-    <button class="searchButton" (click)="clickSearch()">Search</button>
+    <input type="text" placeholder="Ex: Mew or 'm'" [(ngModel)]="searchString" style="width: 125px;">
+    <button class="searchButton" style="margin-right: 50px" (click)="clickSearch()">Search</button>
     <span>Search  Type:  </span>
-    <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 125px">
+    <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 125px;">
     <button (click)="typeSearch()">Search</button>
 
-    <ngb-pagination [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"  [(pageSize)]="pageSize" size="lg"></ngb-pagination>
   </div>
 
-  
+  <ngb-pagination class="d-flex justify-content-center" [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"  [(pageSize)]="pageSize" size="lg"></ngb-pagination>
+
+
+
+  <div class="d-flex justify-content-center">
   <table class="table" style="float:left; width: 200px; text-align: center" >
       <div *ngFor="let card of cardData; let i = index; let even = even">
         <ng-container *ngIf="even && i%3!=0">
@@ -64,6 +65,7 @@
         </ng-container>
     </div>
   </table>
+</div>
 </div>
 
 <div *ngIf="!auth.isAuthenticated()">

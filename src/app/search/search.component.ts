@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpServiceService } from '../http-service.service';
+import { HttpService } from '../services/http.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AuthService } from '../auth/auth.service'
 
@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   private total: number = 0;
   private pageSize:number = 30;
   constructor(
-    public httpService: HttpServiceService,
+    public httpService: HttpService,
     public auth: AuthService
   ) { }
 
