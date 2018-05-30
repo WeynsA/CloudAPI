@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -37,7 +37,7 @@ namespace WorldApi.Model
                 {
                     Name = "Rome",
                     Residents = "2,873 mil",
-                    Area = 1285,
+                    Area = "1285 km²",
                     Country = italy
                 };
 
@@ -45,7 +45,7 @@ namespace WorldApi.Model
                 {
                     Name = "Naples",
                     Residents = "0.97 mil",
-                    Area = 1171,
+                    Area = "1171 km²",
                     Country = italy
                 };
 
@@ -53,7 +53,7 @@ namespace WorldApi.Model
                 {
                     Name = "Moskou",
                     Residents = "12,506 mil",
-                    Area = 2511,
+                    Area = "2511 km²",
                     Country = russia
                 };
 
@@ -61,7 +61,7 @@ namespace WorldApi.Model
                 {
                     Name = "Samara",
                     Residents = "1.157 mil",
-                    Area = 466,
+                    Area = "466 km²",
                     Country = russia
                 };
 

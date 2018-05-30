@@ -7,7 +7,6 @@
     <span>Search  Type:  </span>
     <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 125px;">
     <button (click)="typeSearch()">Search</button>
-
   </div>
 
   <ngb-pagination class="d-flex justify-content-center" [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"  [(pageSize)]="pageSize" size="lg"></ngb-pagination>

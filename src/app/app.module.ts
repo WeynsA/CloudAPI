@@ -14,12 +14,17 @@ import { SearchComponent } from './search/search.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CallbackComponent } from './callback/callback.component';
 import { AuthService } from './auth/auth.service';
+import { RestApiComponent } from './rest-api/rest-api.component';
+import { APIpostComponent } from './rest-api/apipost/apipost.component';
+import { APIdeleteComponent } from './rest-api/apidelete/apidelete.component';
+import { APIputComponent } from './rest-api/apiput/apiput.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'restAPI', component: RestApiComponent}
  ];
 
 @NgModule({
@@ -29,7 +34,11 @@ const appRoutes: Routes = [
     AboutComponent,
     SearchComponent,
     NavBarComponent,
-    CallbackComponent
+    CallbackComponent,
+    RestApiComponent,
+    APIpostComponent,
+    APIdeleteComponent,
+    APIputComponent
   ],
   imports: [
     BrowserModule,
