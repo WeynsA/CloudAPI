@@ -1,10 +1,11 @@
 <div *ngIf="auth.isAuthenticated()" class="container">
- User is logged in.
-  </div>
-  <div *ngIf="!auth.isAuthenticated()">
-    <button id="qsLoginBtn"
-    class="btn btn-primary my-2 my-sm-0"
-    *ngIf="!auth.isAuthenticated()"
-    (click)="auth.login()" type="button">
+ <p class="lead">Welcome to PokéSearch!</p>
+ <img src="assets/images/homeImage.jpg" alt="Error loading image.">
+</div>
+<div *ngIf="!auth.isAuthenticated()">
+    <button id="qsLoginBtn" class="btn btn-primary my-2 my-sm-0" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" type="button">
       Log In
-  </button>    </div>
+  </button>
+  <p class="lead">make Pikachu happy and log in first!</p>
+  <img src="assets/images/sadPikachu.jpg" alt="Pika is too sad to be loaded.">
+</div>

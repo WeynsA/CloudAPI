@@ -17,8 +17,8 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="home">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="about">About</a>
-              <a class="nav-item nav-link" href="search">Search</a>
+              <a class="nav-item nav-link active" href="about">About</a>
+              <a class="nav-item nav-link active" href="search">Search</a>
               <button class="btn btn-primary btn-margin" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Log In</button>
               <button  class="btn btn-primary btn-margin" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Log Out</button>
             </div>
