@@ -18,6 +18,7 @@ import { RestApiComponent } from './rest-api/rest-api.component';
 import { APIpostComponent } from './rest-api/apipost/apipost.component';
 import { APIdeleteComponent } from './rest-api/apidelete/apidelete.component';
 import { APIputComponent } from './rest-api/apiput/apiput.component';
+import { ApigetComponent } from './rest-api/apiget/apiget.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     RestApiComponent,
     APIpostComponent,
     APIdeleteComponent,
-    APIputComponent
+    APIputComponent,
+    ApigetComponent
   ],
   imports: [
     BrowserModule,

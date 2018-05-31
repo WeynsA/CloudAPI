@@ -36,8 +36,8 @@ namespace WorldApi.Model
                 var rome = new City()
                 {
                     Name = "Rome",
-                    Residents = "2,873 mil",
-                    Area = "1285 km²",
+                    Residents = "2.873 mil",
+                    Area = 1285,
                     Country = italy
                 };
 
@@ -45,15 +45,15 @@ namespace WorldApi.Model
                 {
                     Name = "Naples",
                     Residents = "0.97 mil",
-                    Area = "1171 km²",
+                    Area = 1171,
                     Country = italy
                 };
 
                 var moskou = new City()
                 {
                     Name = "Moskou",
-                    Residents = "12,506 mil",
-                    Area = "2511 km²",
+                    Residents = "12.506 mil",
+                    Area = 2511,
                     Country = russia
                 };
 
@@ -61,7 +61,7 @@ namespace WorldApi.Model
                 {
                     Name = "Samara",
                     Residents = "1.157 mil",
-                    Area = "466 km²",
+                    Area = 466,
                     Country = russia
                 };
 

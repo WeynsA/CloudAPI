@@ -73,7 +73,7 @@ namespace WorldApi.Controllers
       return Ok(city);
     }
 
-    [HttpGet("{name}")]
+    [HttpGet("n/{name}")]
     public IActionResult GetCity(string name)
     {
       var city = db.Cities.Where(c => c.Name == name);

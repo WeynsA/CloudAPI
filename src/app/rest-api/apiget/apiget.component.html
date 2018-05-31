@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    Search by specific Name
+      <div class="table-wrapper-2">
+          <input type="text" class="form-control" [(ngModel)]="Search">
+          <table class="table table-responsive">
+              <thead class="mdb-color lighten-4">
+                  <tr>
+                      <th class="th-lg">ID</th>
+                      <th class="th-lg">Name</th>
+                      <th class="th-lg">Residents</th>
+                      <th class="th-lg">Area</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of result">
+                      <td scope="row">{{item.id}}</td>
+                      <td>{{item.name}}</td>
+                      <td>{{item.residents}}</td>
+                      <td>{{item.area}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
