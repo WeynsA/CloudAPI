@@ -20,11 +20,6 @@ namespace WorldApi.Controllers
     }
     // GET api/city
 
-    //[HttpGet]
-    //public List<City> Get()
-    //{
-    //  return db.Cities.ToList();
-    //}
     [HttpGet]
     public List<City> GetAllCities(string name, string residents, string sort = "area", int length = 2, string dir = "asc", int? page = 0)
     {

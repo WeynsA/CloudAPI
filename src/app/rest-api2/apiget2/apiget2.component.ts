@@ -85,7 +85,25 @@ export class Apiget2Component implements OnInit {
   }
 
   public sortDirAcc() {
-    this.sortVar = "area";
+    this.sortVar = "continent";
+    if (this.sortDir == "asc")
+      this.sortDir = "dsc"
+    else
+      this.sortDir = "asc";
+    this.searchName();
+  }
+
+  public sortCode() {
+    this.sortVar = "code";
+    if (this.sortDir == "asc")
+      this.sortDir = "dsc"
+    else
+      this.sortDir = "asc";
+    this.searchName();
+  }
+
+  public sortName() {
+    this.sortVar = "name";
     if (this.sortDir == "asc")
       this.sortDir = "dsc"
     else

@@ -14,11 +14,17 @@
             ID
             <button class="dropdown-toggle" style="background-color: #0000; width:5px; border: none" (click)="sortFieldId()"></button>
           </th>
-          <th class="th-lg">Name</th>
-          <th class="th-lg">Continent</th>
+          <th class="th-lg">
+            Name
+            <button class="dropdown-toggle" style="background-color: #0000; border: none" (click)="sortName()"></button>
+          </th>
+          <th class="th-lg">
+            Continent
+            <button class="dropdown-toggle" style="background-color: #0000; border: none" (click)="sortDirAcc()"></button>
+          </th>
           <th class="th-lg">
             Code
-            <button class="dropdown-toggle" style="background-color: #0000; border: none" (click)="sortDirAcc()"></button>
+            <button class="dropdown-toggle" style="background-color: #0000; border: none" (click)="sortCode()"></button>
           </th>
         </tr>
       </thead>
