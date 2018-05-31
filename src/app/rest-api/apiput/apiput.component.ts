@@ -12,7 +12,7 @@ export class APIputComponent implements OnInit {
   private _search: number; 
   private name: string = "";
   private residents: string = "";
-  private area: number = 0;
+  private area: number;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -54,13 +54,7 @@ export class APIputComponent implements OnInit {
       this.searchByID(value);
     }
   }
-  wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while(end < start + ms) {
-      end = new Date().getTime();
-   }
- }
+
   Put() {
     this.http.put(`http://localhost:13387/api/city`, {
       ID: this._search,
@@ -70,9 +64,6 @@ export class APIputComponent implements OnInit {
     })
     .subscribe((data:any) => {
       console.log(data)
-    }
-  )
-  this.wait(1000);
-  this.searchByID(this._search);
+    })
   }
 }

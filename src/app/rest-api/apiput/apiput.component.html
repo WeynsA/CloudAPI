@@ -5,7 +5,6 @@
         </div>
   <div class="card-body">
     <div class="table-wrapper-2">
-
       <input type="text" class="form-control" [(ngModel)]="Search">
       <div *ngIf="result" class="wrapper1">
         <ul>
@@ -16,11 +15,11 @@
           <br>
           <br> Fill in the fields below, then submit by using the Update button
           <br> Name:
-          <input type="text" value="100" [(ngModel)]="Name" name="fname">
+          <input type="text" [(ngModel)]="Name">
           <br> Residents:
-          <input type="text" [(ngModel)]="Residents" name="lname">
+          <input type="text" [(ngModel)]="Residents">
           <br> Area:
-          <input type="number" [(ngModel)]="Area" name="lname">
+          <input type="number" [(ngModel)]="Area">
           <br>
         </ul>
       </div>

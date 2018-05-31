@@ -1,21 +1,12 @@
 <div class="card" style="text-align: center;">
   <div class="card-header">
   <h5 class="card-title">Delete a city here.</h5>
-  <small>First search for a city by Id, then press delete to remove it from the db.</small>
+  <small>First search for a city by Id in the Update section, then press delete to remove it from the db.</small>
   </div>
   <div class="card-body">
     <div class="table-wrapper-2">
       <input type="text" class="form-control" [(ngModel)]="cityId">
-      <div *ngIf="result" class="wrapper1">
-        <ul>
-          <h4>Current Value</h4>
-          Name: {{result.name}}
-          <br> Residents: {{result.residents}}
-          <br> Area: {{result.area}}
-          <br>
-        </ul>
       </div>
-    </div>
     <div class="text-center py-4 mt-3">
       <button type="button" class="btn btn-dark" (click)="Delete()" type="submit">Delete</button>
     </div>
