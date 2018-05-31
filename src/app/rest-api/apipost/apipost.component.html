@@ -1,28 +1,27 @@
-<div class="card">
-  <div class="card-body">
+<div class="card" style="text-align:center">
+  <form>
+    <div class="card-header">
+      <h5 class="card-title">Add a new City</h5>
+      <small>Fill in the fields and press submit to add a city to the db</small>
+    </div>
+    City Name
+    <div class="md-form">
+      <input type="text" [(ngModel)]="Name" name="something" id="materialFormCardNameEx" class="form-control">
+      <label for="materialFormCardNameEx" class="font-weight-light"></label>
+    </div>
+    Amount of residents
+    <div class="md-form">
+      <input type="text" [(ngModel)]="Residents" name="something" id="materialFormCardEmailEx" class="form-control">
+      <label for="materialFormCardEmailEx" class="font-weight-light"></label>
+    </div>
+    Total area (m²)
+    <div class="md-form">
+      <input type="text" [(ngModel)]="Area" name="something" id="Genre" class="form-control">
+      <label for="materialFormCardConfirmEx" class="font-weight-light"></label>
+    </div>
 
-    <form>
-      <p class="h4 text-center py-4">Add a new City</p>
-
-      City Name
-      <div class="md-form">
-        <input type="text" [(ngModel)]="Name" name="something" id="materialFormCardNameEx" class="form-control">
-        <label for="materialFormCardNameEx" class="font-weight-light"></label>
-      </div>
-      Amount of residents
-      <div class="md-form">
-        <input type="text" [(ngModel)]="Residents" name="something" id="materialFormCardEmailEx" class="form-control">
-        <label for="materialFormCardEmailEx" class="font-weight-light"></label>
-      </div>
-      Total area (m²)
-      <div class="md-form">
-        <input type="text" [(ngModel)]="Area" name="something" id="Genre" class="form-control">
-        <label for="materialFormCardConfirmEx" class="font-weight-light"></label>
-      </div>
-
-      <div class="text-center py-4 mt-3">
-        <button class="btn btn-cyan" (click)="Post()" type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
+    <div class="text-center py-4 mt-3">
+      <button type="button" class="btn btn-dark" (click)="Post()" type="submit">Submit</button>
+    </div>
+  </form>
 </div>

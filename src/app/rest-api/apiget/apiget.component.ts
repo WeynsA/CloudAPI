@@ -8,8 +8,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./apiget.component.scss']
 })
 export class ApigetComponent implements OnInit {
+
   result: any;
   private _search: string = "";
+  private sortDir: string = "asc"
+  private sortVar: string = "area";
   private page: number = 0;
   private total: number = 0;
   private pageSize: number = 5;
@@ -19,7 +22,7 @@ export class ApigetComponent implements OnInit {
     this.searchName();
   }
   public searchName() {
-    this.http.get(`http://localhost:13387/api/city?page=` + this.page + "&length=" + this.pageSize)
+    this.http.get(`http://localhost:13387/api/city?page=` + this.page + "&length=" + this.pageSize + "&sort=" + this.sortVar + "&dir=" + this.sortDir )
       .subscribe(
         (res: Response) => {
           this.result = res;
@@ -64,20 +67,40 @@ export class ApigetComponent implements OnInit {
     console.log(this.page)
   }
 
-  public twoResultsPerPage(){
+  public twoResultsPerPage() {
     this.pageSize = 2;
     this.searchName();
   }
 
-  public fiveResultsPerPage(){
+  public fiveResultsPerPage() {
     this.pageSize = 5;
     this.page = 0;
     this.searchName();
   }
 
-  public moreResultsPerPage(){
+  public moreResultsPerPage() {
     this.pageSize = 25;
     this.page = 0;
     this.searchName();
+  }
+
+  public sortDirAcc() {
+    this.sortVar = "area";
+    if (this.sortDir == "asc")
+      this.sortDir = "dsc"
+    else
+      this.sortDir = "asc";
+    this.searchName();
+  }
+
+  public sortFieldId() {
+    this.sortVar = "id"
+    if (this.sortDir == "asc")
+      this.sortDir = "dsc"
+    else
+      this.sortDir = "asc";
+    this.searchName();
+    console.log(this.sortVar)
+    console.log(this.sortDir)
   }
 }

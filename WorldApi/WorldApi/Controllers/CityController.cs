@@ -51,6 +51,12 @@ namespace WorldApi.Controllers
             else
               query = query.OrderByDescending(c => c.Area);
             break;
+          case "id":
+            if (dir == "asc")
+              query = query.OrderBy(c => c.Id);
+            else
+              query = query.OrderByDescending(c => c.Id);
+            break;
         }
 
 

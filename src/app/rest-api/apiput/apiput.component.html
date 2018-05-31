@@ -1,32 +1,32 @@
-<div  class="card" style="text-align: center;">
-  <p class="h4 text-center py-4">Update a specific city</p>
-    <div class="card-body">
-        <div class="table-wrapper-2">
-          Search for a city by entering an ID
-            <input type="text" class="form-control" [(ngModel)]="Search">
-            <div *ngIf="result" class="wrapper1">
-                <ul>
-                        <h4>Current Value</h4>
-                        Name:  
-                        {{result.name}}
-                        <br>
-                        Residents:  
-                        {{result.residents}} 
-                        <br>
-                        Area:
-                        {{result.area}}    
-                        <br>
-                        <br>
-                        Fill in the fields below, then submit by using the Update button
-                        <br>
-                        Name: <input type="text" value="100" [(ngModel)]="Name" name="fname"><br>
-                        Residents: <input type="text" [(ngModel)]="Residents" name="lname"><br>
-                        Area: <input type="number" [(ngModel)]="Area" name="lname"><br>
-                        </ul> 
-          </div>
+<div class="card" style="text-align: center;">
+    <div class="card-header">
+        <h5 class="card-title">Update a specific city</h5>
+        <small>Search for a city by entering an ID</small>
         </div>
-        <div class="text-center py-4 mt-3">
-            <button class="btn btn-cyan" (click)="Put()" type="submit">Update</button>
-        </div>
+  <div class="card-body">
+    <div class="table-wrapper-2">
+
+      <input type="text" class="form-control" [(ngModel)]="Search">
+      <div *ngIf="result" class="wrapper1">
+        <ul>
+          <h4>Current Value</h4>
+          Name: {{result.name}}
+          <br> Residents: {{result.residents}}
+          <br> Area: {{result.area}}
+          <br>
+          <br> Fill in the fields below, then submit by using the Update button
+          <br> Name:
+          <input type="text" value="100" [(ngModel)]="Name" name="fname">
+          <br> Residents:
+          <input type="text" [(ngModel)]="Residents" name="lname">
+          <br> Area:
+          <input type="number" [(ngModel)]="Area" name="lname">
+          <br>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center py-4 mt-3">
+      <button type="button" class="btn btn-dark" (click)="Put()" type="submit">Update</button>
     </div>
   </div>
+</div>

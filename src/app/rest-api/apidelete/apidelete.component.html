@@ -1,8 +1,10 @@
 <div class="card" style="text-align: center;">
-  <p class="h4 text-center py-4">Delete a city here.</p>
+  <div class="card-header">
+  <h5 class="card-title">Delete a city here.</h5>
+  <small>First search for a city by Id, then press delete to remove it from the db.</small>
+  </div>
   <div class="card-body">
     <div class="table-wrapper-2">
-      Search for a city by entering an ID
       <input type="text" class="form-control" [(ngModel)]="cityId">
       <div *ngIf="result" class="wrapper1">
         <ul>
@@ -15,7 +17,7 @@
       </div>
     </div>
     <div class="text-center py-4 mt-3">
-      <button class="btn btn-cyan" (click)="Delete()" type="submit">Delete</button>
+      <button type="button" class="btn btn-dark" (click)="Delete()" type="submit">Delete</button>
     </div>
   </div>
 </div>

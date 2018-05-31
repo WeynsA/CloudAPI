@@ -1,34 +1,44 @@
-<div class="card text-center">
-  <div class="card-body">
-    <div class="card-header">
+  <div class="card">
+    <div clas="d-flex justify-content-center">
+    <div class="card-header" style="text-align: center">
       <h5 class="card-title">Search by specific Name</h5>
+      <small>You can change: sorting direction, field and rows displayed.</small>
     </div>
-      
-          <input type="text" class="form-control" [(ngModel)]="Search">
-          <div  class="d-flex justify-content-center">
-          <table class="table">
-              <thead class="mdb-color lighten-4">
-                  <tr>
-                      <th class="th-lg">ID</th>
-                      <th class="th-lg">Name</th>
-                      <th class="th-lg">Residents</th>
-                      <th class="th-lg">Area</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let item of result">
-                      <td scope="row">{{item.id}}</td>
-                      <td>{{item.name}}</td>
-                      <td>{{item.residents}}</td>
-                      <td>{{item.area}}</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-        <button (click)="prevPage()"><<</button>
-        <button (click)="twoResultsPerPage()">2 entries</button>
-        <button (click)="fiveResultsPerPage()">5 entries</button>
-        <button (click)="moreResultsPerPage()">25 entries</button>
-        <button (click)="nextPage()">>></button>
-      </div>
+
+    <input type="text" class="form-control" [(ngModel)]="Search">
+    <div class="d-flex justify-content-center">
+      <table class="table">
+        <thead class="mdb-color lighten-4">
+          <tr>
+            <th class="th-lg">
+              ID
+              <button class="dropdown-toggle" style="background-color: #0000; width:5px; border: none" (click)="sortFieldId()"></button>
+            </th>
+            <th class="th-lg">Name</th>
+            <th class="th-lg">Residents</th>
+            <th class="th-lg" data-sortable="true">
+              Area
+              <button class="dropdown-toggle" style="background-color: #0000; border: none" (click)="sortDirAcc()"></button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of result">
+            <td scope="row">{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.residents}}</td>
+            <td>{{item.area}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-dark" (click)="prevPage()"><<</button>
+    <button type="button" class="btn btn-dark" (click)="twoResultsPerPage()">2 entries</button>
+    <button type="button" class="btn btn-dark" (click)="fiveResultsPerPage()">5 entries</button>
+    <button type="button" class="btn btn-dark" (click)="moreResultsPerPage()">25 entries</button>
+    <button type="button" class="btn btn-dark" (click)="nextPage()">>></button>
   </div>
+  </div>
+
