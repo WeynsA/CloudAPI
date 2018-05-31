@@ -1,0 +1,18 @@
+<div *ngIf="auth.isAuthenticated()" class="container">
+        
+  <div class="row">
+      <div class="col-sm-6 col-md-8 ">
+         <app-apiget2></app-apiget2>
+      </div>
+      <div class="col-sm-8 col-md-8 ">
+          <app-apipost2></app-apipost2>
+      </div>
+      <div class="col-sm-8 col-md-8 ">
+          <app-apiput2></app-apiput2>
+      </div>
+      <div class="col-sm-8 col-md-8 ">
+          <app-apidelete2></app-apidelete2>
+      </div>
+  </div>
+  </div>
+<div *ngIf="!auth.isAuthenticated()">Please login to use this API</div>

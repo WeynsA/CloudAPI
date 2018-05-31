@@ -1,0 +1,14 @@
+<div class="card" style="text-align: center;">
+  <div class="card-header">
+  <h5 class="card-title">Delete a country here.</h5>
+  <small>First search for a country by Id in the Update section, then press delete to remove it from the db.</small>
+  </div>
+  <div class="card-body">
+    <div class="table-wrapper-2">
+      <input type="text" class="form-control" [(ngModel)]="countryId">
+      </div>
+    <div class="text-center py-4 mt-3">
+      <button type="button" class="btn btn-dark" (click)="Delete()" type="submit">Delete</button>
+    </div>
+  </div>
+</div>

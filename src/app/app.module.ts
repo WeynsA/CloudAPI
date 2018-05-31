@@ -19,13 +19,19 @@ import { APIpostComponent } from './rest-api/apipost/apipost.component';
 import { APIdeleteComponent } from './rest-api/apidelete/apidelete.component';
 import { APIputComponent } from './rest-api/apiput/apiput.component';
 import { ApigetComponent } from './rest-api/apiget/apiget.component';
+import { RestApi2Component } from './rest-api2/rest-api2.component';
+import { Apiget2Component } from './rest-api2/apiget2/apiget2.component';
+import { Apiput2Component } from './rest-api2/apiput2/apiput2.component';
+import { Apipost2Component } from './rest-api2/apipost2/apipost2.component';
+import { Apidelete2Component } from './rest-api2/apidelete2/apidelete2.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'restAPI', component: RestApiComponent}
+  { path: 'restAPI', component: RestApiComponent},
+  { path: 'restAPI2', component: RestApi2Component}
  ];
 
 @NgModule({
@@ -40,7 +46,12 @@ const appRoutes: Routes = [
     APIpostComponent,
     APIdeleteComponent,
     APIputComponent,
-    ApigetComponent
+    ApigetComponent,
+    RestApi2Component,
+    Apiget2Component,
+    Apiput2Component,
+    Apipost2Component,
+    Apidelete2Component
   ],
   imports: [
     BrowserModule,

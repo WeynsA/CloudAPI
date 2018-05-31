@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class APIpostComponent implements OnInit {
   private name: string = "";
   private residents: string = "";
-  private area: string = "";
+  private area: number;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class APIpostComponent implements OnInit {
   get Area() {
     return this.area;
   }
-  set Area(value: string) {
+  set Area(value: number) {
     this.area = value;
   }
   Post() {

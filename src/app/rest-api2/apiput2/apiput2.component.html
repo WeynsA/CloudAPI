@@ -1,0 +1,31 @@
+<div class="card" style="text-align: center;">
+  <div class="card-header">
+      <h5 class="card-title">Update a specific country</h5>
+      <small>Search for a country by entering an ID</small>
+      </div>
+<div class="card-body">
+  <div class="table-wrapper-2">
+    <input type="text" class="form-control" [(ngModel)]="Search">
+    <div *ngIf="result" class="wrapper1">
+      <ul>
+        <h4>Current Value</h4>
+        Name: {{result.name}}
+        <br> Continent: {{result.continent}}
+        <br> Code: {{result.code}}
+        <br>
+        <br> Fill in the fields below, then submit by using the Update button
+        <br> Name:
+        <input type="text" [(ngModel)]="Name">
+        <br> Continent:
+        <input type="text" [(ngModel)]="Continent">
+        <br> Code:
+        <input type="text" [(ngModel)]="Code">
+        <br>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center py-4 mt-3">
+    <button type="button" class="btn btn-dark" (click)="Put()" type="submit">Update</button>
+  </div>
+</div>
+</div>

@@ -33,28 +33,18 @@ namespace WorldApi.Controllers
                 return NotFound();
             return Ok(country);
         }
-        //Get met naam ipv ID (werkt)
-        //[HttpGet("{name}")]
-        //public IActionResult GetCountryName (string name)
-        //{
-        //    var country = db.Countries.Where(c => c.Name == name).FirstOrDefault();
-        //    if (country == null)
-        //        return NotFound();
-
-        //    return Ok(country);
-        //}
-
+ 
         // POST api/values
         [HttpPost]
         public IActionResult AddCountry([FromBody]Country newCountry)
         {
             db.Countries.Add(newCountry);
             db.SaveChanges();
-            return Ok(new Country());
+            return Created("", newCountry);
         }
 
-        // PUT api/values/5
-        [HttpPut]
+    // PUT api/values/5
+    [HttpPut]
         public IActionResult UpdateCountry([FromBody]Country updateCountry)
         {
             var upCountry = db.Countries.Find(updateCountry.Id);

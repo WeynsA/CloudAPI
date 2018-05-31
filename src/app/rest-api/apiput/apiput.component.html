@@ -13,14 +13,24 @@
           <br> Residents: {{result.residents}}
           <br> Area: {{result.area}}
           <br>
-          <br> Fill in the fields below, then submit by using the Update button
-          <br> Name:
-          <input type="text" [(ngModel)]="Name">
-          <br> Residents:
-          <input type="text" [(ngModel)]="Residents">
-          <br> Area:
-          <input type="number" [(ngModel)]="Area">
-          <br>
+          <br><i> Fill in the fields below, then submit by using the Update button</i>
+          <br>   <form>
+            City Name
+            <div class="md-form">
+              <input type="text" [(ngModel)]="Name" name="name"  class="form-control">
+        
+            </div>
+            Amount of residents
+            <div class="md-form">
+              <input type="text" [(ngModel)]="Residents" name="residents" class="form-control">
+        
+            </div>
+            Total area (m²)
+            <div class="md-form">
+              <input type="text" [(ngModel)]="Area" name="area" class="form-control">
+              
+            </div>
+          </form>
         </ul>
       </div>
     </div>
