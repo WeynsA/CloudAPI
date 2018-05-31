@@ -6,7 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpService } from './services/http.service';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +26,6 @@ import { Apidelete2Component } from './rest-api2/apidelete2/apidelete2.component
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'restAPI', component: RestApiComponent},
@@ -38,7 +36,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     SearchComponent,
     NavBarComponent,
     CallbackComponent,
