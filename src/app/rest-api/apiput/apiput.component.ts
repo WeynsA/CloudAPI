@@ -12,13 +12,13 @@ export class APIputComponent implements OnInit {
   private _search: number; 
   private name: string = "";
   private residents: string = "";
-  private area: string = "";
+  private area: number = 0;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
   searchByID(id: number) {
-    this.http.get(`http://localhost:103387/api/city/${id}`)
+    this.http.get(`http://localhost:13387/api/city/${id}`)
     .subscribe(
       (res: Response) => {
         this.result = res;
@@ -42,7 +42,7 @@ export class APIputComponent implements OnInit {
   get Area() {
     return this.area;
   }
-  set Area(value: string) {
+  set Area(value: number) {
     this.area = value;
   }
   get Search() {
@@ -62,11 +62,11 @@ export class APIputComponent implements OnInit {
    }
  }
   Put() {
-    this.http.put(`http://localhost:103387/api/city`, {
+    this.http.put(`http://localhost:13387/api/city`, {
       ID: this._search,
       Name: this.name,
       Residents: this.residents,
-      Type: this.area
+      Area: this.area
     })
     .subscribe((data:any) => {
       console.log(data)

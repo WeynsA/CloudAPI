@@ -1,10 +1,10 @@
 <div  class="card" style="text-align: center;">
-  Update a specific city
+  <p class="h4 text-center py-4">Update a specific city</p>
     <div class="card-body">
         <div class="table-wrapper-2">
           Search for a city by entering an ID
             <input type="text" class="form-control" [(ngModel)]="Search">
-            <div *ngIf = "result" class="wrapper1">
+            <div *ngIf="result" class="wrapper1">
                 <ul>
                         <h4>Current Value</h4>
                         Name:  
@@ -19,9 +19,9 @@
                         <br>
                         Fill in the fields below, then submit by using the Update button
                         <br>
-                        Name: <input type="text" [(ngModel)]="Name" name="fname"><br>
+                        Name: <input type="text" value="100" [(ngModel)]="Name" name="fname"><br>
                         Residents: <input type="text" [(ngModel)]="Residents" name="lname"><br>
-                        Area: <input type="text" [(ngModel)]="Area" name="lname"><br>
+                        Area: <input type="number" [(ngModel)]="Area" name="lname"><br>
                         </ul> 
           </div>
         </div>

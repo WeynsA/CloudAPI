@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-apiget',
@@ -8,39 +9,75 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApigetComponent implements OnInit {
   result: any;
-  private _search: string = ""  
+  private _search: string = "";
+  private page: number = 0;
+  private total: number = 0;
+  private pageSize: number = 5;
+
   constructor(private http: HttpClient) { }
   ngOnInit() {
     this.searchName();
-    }
-  searchName() {
-    this.http.get(`http://localhost:13387/api/city/`)
-    .subscribe(
-      (res: Response) => {
-        this.result = res;
-        console.log(this.result)
-      }
-    )
   }
-  searchSpecificName(replaced: string) {
+  public searchName() {
+    this.http.get(`http://localhost:13387/api/city?page=` + this.page + "&length=" + this.pageSize)
+      .subscribe(
+        (res: Response) => {
+          this.result = res;
+          console.log(this.result)
+        }
+      )
+  }
+
+  public searchSpecificName(replaced: string) {
     this.http.get(`http://localhost:13387/api/city/n/${replaced}`)
-    .subscribe(
-      (res: Response) => {
-        this.result = res;
-        console.log(this.result)
-      }
-    )
+      .subscribe(
+        (res: Response) => {
+          this.result = res;
+          console.log(this.result)
+        }
+      )
   }
+
   get Search() {
     return this._search;
   }
+
   set Search(value: string) {
     this._search = value;
-    if(this._search == "") {
+    if (this._search == "") {
       this.searchName();
     }
     var replaced = value.split(' ').join('%20');
     this.searchSpecificName(replaced);
   }
 
+  public prevPage() {
+    if (this.page > 0)
+      this.page--;
+    this.searchName();
+    console.log(this.page)
+  }
+
+  public nextPage() {
+    this.page++;
+    this.searchName();
+    console.log(this.page)
+  }
+
+  public twoResultsPerPage(){
+    this.pageSize = 2;
+    this.searchName();
+  }
+
+  public fiveResultsPerPage(){
+    this.pageSize = 5;
+    this.page = 0;
+    this.searchName();
+  }
+
+  public moreResultsPerPage(){
+    this.pageSize = 25;
+    this.page = 0;
+    this.searchName();
+  }
 }

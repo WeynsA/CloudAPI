@@ -1,4 +1,5 @@
 <div *ngIf="auth.isAuthenticated()" class="container">
+        
   <div class="row">
       <div class="col-sm-6 col-md-8 ">
          <app-apiget></app-apiget>
@@ -13,6 +14,6 @@
           <app-apidelete></app-apidelete>
       </div>
   </div>
-  
-</div>
+  </div>
+
 <div *ngIf="!auth.isAuthenticated()">Please login to use this API</div>

@@ -26,7 +26,7 @@ namespace WorldApi.Controllers
     //  return db.Cities.ToList();
     //}
     [HttpGet]
-    public List<City> GetAllCities(string name, string residents, string sort = "area", int length = 100, string dir = "asc", int? page = 0)
+    public List<City> GetAllCities(string name, string residents, string sort = "area", int length = 2, string dir = "asc", int? page = 0)
     {
       IQueryable<City> query = db.Cities;
 

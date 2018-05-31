@@ -1,55 +1,59 @@
-<div *ngIf="auth.isAuthenticated()" class="container color-dark" >
+<div *ngIf="auth.isAuthenticated()" class="container color-dark">
   <div class="d-flex justify-content-center">
 
     <span>Search Name: </span>
     <input type="text" placeholder="Ex: Mew or 'm'" [(ngModel)]="searchString" style="width: 125px;">
     <button class="searchButton" style="margin-right: 50px" (click)="clickSearch()">Search</button>
-    <span>Search  Type:  </span>
+    <span>Search Type: </span>
     <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 125px;">
     <button (click)="typeSearch()">Search</button>
   </div>
 
-  <ngb-pagination class="d-flex justify-content-center" [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"  [(pageSize)]="pageSize" size="lg"></ngb-pagination>
-
-
+  <ngb-pagination class="d-flex justify-content-center" [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"
+    [(pageSize)]="pageSize" size="lg"></ngb-pagination>
 
   <div class="d-flex justify-content-center">
-  <table class="table" style="float:left; width: 200px; text-align: center" >
+
+    <table class="table" style="float:left; width: 200px; text-align: center">
       <div *ngFor="let card of cardData; let i = index; let even = even">
         <ng-container *ngIf="even && i%3!=0">
-        <thead class="thead-dark">
-        <tr>
-          <th scope="col">{{card.name}}</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <th scope="col"><img [src]="card.imageUrl" alt=""></th>
-          </tr>
-        </tbody>
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">{{card.name}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">
+                <img [src]="card.imageUrl" alt="">
+              </th>
+            </tr>
+          </tbody>
         </ng-container>
-        </div>
-  </table>
+      </div>
+    </table>
 
-  <table class="table" style="float:left; width: 200px; text-align: center">
-    <div *ngFor="let card of cardData; let i = index">
-          <ng-container *ngIf="i%3 == 0">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">{{card.name}}</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <th scope="col"><img [src]="card.imageUrl" alt=""></th>
-                </tr>
-              </tbody>
-          </ng-container>
-    </div>
-  </table>
+    <table class="table" style="float:left; width: 200px; text-align: center">
+      <div *ngFor="let card of cardData; let i = index">
+        <ng-container *ngIf="i%3 == 0">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">{{card.name}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">
+                <img [src]="card.imageUrl" alt="">
+              </th>
+            </tr>
+          </tbody>
+        </ng-container>
+      </div>
+    </table>
 
-  <table class="table" style="float:left; width: 200px; text-align: center">
-    <div *ngFor="let card of cardData; let i = index; let odd = odd">
+    <table class="table" style="float:left; width: 200px; text-align: center">
+      <div *ngFor="let card of cardData; let i = index; let odd = odd">
         <ng-container *ngIf="odd && i%3!=0">
           <thead class="thead-dark">
             <tr>
@@ -58,15 +62,18 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="col"><img [src]="card.imageUrl" alt=""></th>
+              <th scope="col">
+                <img [src]="card.imageUrl" alt="">
+              </th>
             </tr>
           </tbody>
         </ng-container>
-    </div>
-  </table>
-</div>
+      </div>
+    </table>
+  </div>
 </div>
 
+
 <div *ngIf="!auth.isAuthenticated()">
-User must be logged in to use this service.
+  User must be logged in to use this service.
 </div>
