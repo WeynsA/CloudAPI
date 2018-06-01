@@ -3,10 +3,13 @@
 
     <span>Search Name: </span>
     <input type="text" placeholder="Ex: Mew or 'm'" [(ngModel)]="searchString" style="width: 125px;">
-    <button class="searchButton" style="margin-right: 50px" (click)="clickSearch()">Search</button>
+    <button style="margin-right: 25px" (click)="clickSearch()">Search</button>
     <span>Search Type: </span>
-    <input type="text" placeholder="Ex: Water" [(ngModel)]="typeString" style="width: 125px;">
-    <button (click)="typeSearch()">Search</button>
+    <input type="text" placeholder="Ex: Water"  [(ngModel)]="typeString" style="width: 125px;">
+    <button style="margin-right: 25px" (click)="typeSearch()">Search</button>
+    <span>Search set by ID: </span>
+    <input type="text" placeholder="Ex: sm5-3" [(ngModel)]="idString" style="width: 125px;">
+    <button (click)="idSearch()">Search</button>
   </div>
 
   <ngb-pagination class="d-flex justify-content-center" [(collectionSize)]="total" (pageChange)="pageChange($event)" [(page)]="page"

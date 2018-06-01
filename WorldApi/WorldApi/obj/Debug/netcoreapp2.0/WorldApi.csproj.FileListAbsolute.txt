@@ -20,3 +20,14 @@ C:\Users\Arno\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.Assemb
 C:\Users\Arno\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.AssemblyInfo.cs
 C:\Users\Arno\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.dll
 C:\Users\Arno\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.pdb
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\bin\Debug\netcoreapp2.0\WorldApi.deps.json
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\bin\Debug\netcoreapp2.0\WorldApi.runtimeconfig.json
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\bin\Debug\netcoreapp2.0\WorldApi.runtimeconfig.dev.json
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\bin\Debug\netcoreapp2.0\WorldApi.dll
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\bin\Debug\netcoreapp2.0\WorldApi.pdb
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.csprojResolveAssemblyReference.cache
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.csproj.CoreCompileInputs.cache
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.AssemblyInfoInputs.cache
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.AssemblyInfo.cs
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.dll
+C:\Users\Weyns\Desktop\CloudAPI\WorldApi\WorldApi\obj\Debug\netcoreapp2.0\WorldApi.pdb

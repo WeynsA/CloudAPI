@@ -18,8 +18,8 @@
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="home">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link active" href="search">Search</a>
-              <a class="nav-item nav-link active" href="restAPI">WorldAPI</a>
-              <a class="nav-item nav-link active" href="restAPI2">WorldAPI2</a>
+              <a class="nav-item nav-link active" href="restAPI">CityAPI</a>
+              <a class="nav-item nav-link active" href="restAPI2">CountryAPI</a>
               <button class="btn btn-primary btn-margin" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Log In</button>
               <button  class="btn btn-primary btn-margin" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Log Out</button>
             </div>

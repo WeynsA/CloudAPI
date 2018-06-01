@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './apiget.component.html',
   styleUrls: ['./apiget.component.scss']
 })
+
+
 export class ApigetComponent implements OnInit {
 
   result: any;
@@ -17,12 +19,21 @@ export class ApigetComponent implements OnInit {
   private total: number = 0;
   private pageSize: number = 5;
 
+  private baseUrl = "http://localhost:13387/api/city";
+
   constructor(private http: HttpClient) { }
   ngOnInit() {
     this.searchName();
   }
+  
   public searchName() {
-    this.http.get(`http://localhost:13387/api/city?page=` + this.page + "&length=" + this.pageSize + "&sort=" + this.sortVar + "&dir=" + this.sortDir )
+    let Params = new HttpParams();
+    Params = Params.append('page', this.page.toString());
+    Params = Params.append('length', this.pageSize.toString());
+    Params = Params.append('sort', this.sortVar);
+    Params = Params.append('dir', this.sortDir);
+
+    this.http.get(this.baseUrl, {params: Params})
       .subscribe(
         (res: Response) => {
           this.result = res;
@@ -32,7 +43,7 @@ export class ApigetComponent implements OnInit {
   }
 
   public searchSpecificName(replaced: string) {
-    this.http.get(`http://localhost:13387/api/city/n/${replaced}`)
+    this.http.get(this.baseUrl + `/n/${replaced}`)
       .subscribe(
         (res: Response) => {
           this.result = res;

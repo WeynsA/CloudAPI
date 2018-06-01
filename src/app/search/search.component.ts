@@ -12,6 +12,8 @@ export class SearchComponent implements OnInit {
   public cardData: any = [];
   public searchString: string;
   public typeString: string;
+  public idString: string;
+  public id: string;
   private page: number = 1;
   private total: number = 0;
   private pageSize:number = 30;
@@ -41,11 +43,24 @@ export class SearchComponent implements OnInit {
     .subscribe(
       (searchData) => {
         console.log('searchData for ' + this.typeString, searchData);
-       this.cardData = (searchData.body as any).cards || [];                       //callback data in array
+       this.cardData = (searchData.body as any).cards || [];                  //callback data in array
        let headers = searchData.headers;                                      //Pagnation, headers lezen
-       this.total =parseInt( headers.get('Total-Count'))                      //Pagnation, total item count voor 
+       this.total = parseInt( headers.get('Total-Count'))                     //Pagnation, total item count voor 
       },                                                                      //Correct display van aantal pagina's
       (err) => console.warn(err)
+    )
+  }
+
+  idSearch(){
+    this.httpService.getPokemonCard(this.idString, this.page)
+    .subscribe(
+      (searchData) => {
+        this.cardData = (searchData.body as any).cards || [];
+        let headers = searchData.headers;
+        console.log('searchData for ' + this.idString, searchData);
+      },
+      (err) => console.warn(err)
+
     )
   }
 

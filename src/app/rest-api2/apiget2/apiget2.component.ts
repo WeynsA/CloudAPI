@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -17,22 +17,29 @@ export class Apiget2Component implements OnInit {
   private total: number = 0;
   private pageSize: number = 5;
 
+  private baseUrl = 'http://localhost:13387/api/country'
+
   constructor(private http: HttpClient) { }
   ngOnInit() {
     this.searchName();
   }
   public searchName() {
-    this.http.get(`http://localhost:13387/api/country?page=` + this.page + "&length=" + this.pageSize + "&sort=" + this.sortVar + "&dir=" + this.sortDir )
+    let Params = new HttpParams();
+    Params = Params.append('page', this.page.toString());
+    Params = Params.append('length', this.pageSize.toString());
+    Params = Params.append('sort', this.sortVar);
+    Params = Params.append('dir', this.sortDir);
+
+    this.http.get(this.baseUrl, {params: Params})
       .subscribe(
         (res: Response) => {
           this.result = res;
           console.log(this.result)
-        }
-      )
+        })
   }
 
   public searchSpecificName(replaced: string) {
-    this.http.get(`http://localhost:13387/api/country/n/${replaced}`)
+    this.http.get(this.baseUrl + `/n/${replaced}`)
       .subscribe(
         (res: Response) => {
           this.result = res;

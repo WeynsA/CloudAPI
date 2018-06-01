@@ -11,10 +11,18 @@ const series = 'base';
 })
 export class HttpService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient)  { }
 
-  getPokemonCard(cardId: string) {
-    return this.http.get(baseUrl + cardUrl + cardId);
+  getPokemonCard(id: string, page: number) : Observable<HttpResponse<any>> {
+   // return this.http.get(baseUrl + cardUrl + cardId);
+   let Params = new HttpParams();
+
+    // Begin assigning parameters
+    Params = Params.append('id', id);
+    Params = Params.append('page', page.toString());
+    Params = Params.append('pageSize', '30')
+
+    return this.http.get(baseUrl + cardUrl, {params: Params, observe :'response'});
   }
 
   searchPokemonCardByName(name: string,page:number) : Observable<HttpResponse<any>> {
@@ -31,7 +39,7 @@ export class HttpService {
 
   }
 
-  searchPokemonCardByType(type: string, page:number) {
+  searchPokemonCardByType(type: string, page:number) : Observable<HttpResponse<any>> {
     let Params = new HttpParams();
 
     // Begin assigning parameters
